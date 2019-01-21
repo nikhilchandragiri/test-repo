@@ -6,3 +6,7 @@ output: html_document
 ---
 
 Hello, This is my first Rmd file.
+
+* Name: Nikhil Chandragiri
+* Wiu Id: 917-33-4566
+* Email: n-chandragiri@wiu.edu
