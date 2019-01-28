@@ -5,7 +5,22 @@ date: "1/20/2019"
 output: html_document
 ---
 
-Hello, This is my first Rmd file.
+```{r sequence}
+seq(2,10)
+seq.Date(as.Date("2010/1/1"),as.Date("2010/2/3"),by=3,length.out = NULL)
+seq(1,9,by=pi)
+seq_len(length.out = 3)
+number = as.integer(readline(pr="Enter any valid number: "))
+if((number %% 2) == 0) 
+  {
+print(paste(number,"is an Even number"))
+} else 
+  {
+print(paste(number,"is an Odd number"))
+}
+seq_len(22)
+seq.default(from=10, to=17, by=((16-14)/(length.out-1)))
+```
 
 * Name: Nikhil Chandragiri
 * Wiu Id: 917-33-4566

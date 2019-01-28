@@ -1,0 +1,88 @@
+---
+title: "ass_1"
+author: "Nikhil Chandragiri"
+date: "1/20/2019"
+output: html_document
+---
+
+```{r sequence}
+seq(2,10)
+seq.Date(as.Date("2010/1/1"),as.Date("2010/2/3"),by=3,length.out = NULL)
+seq(1,9,by=pi)
+seq_len(length.out = 3)
+seq(1,18,by=2)
+p<-c(1:4)
+q<-c(2:5)
+p*q
+
+seq(2:7)
+seq_len(22)
+seq(1,24,by=4)
+seq.default(10, 17, by=((16-11)))
+```
+s
+
+```{r vectors}
+a1<- c("-------","--------   ","---------    ","---------    ","      ")
+names(a1)=c('    car name','year','color','reg_num','owner')
+a1
+a <- c('BMW-X4',  2014," black",2424,"nikhil")
+a
+a <- c('audi',  2010,'white',2222,'chandragiri')
+a
+a <- c('mercedes',  2011,'gold',2220,'nick')
+a
+a <- c('rangerover',2000,'red',2322,'chand')
+a
+```
+
+```{r subsetting}
+cars <- c('audi','mercedes','BMW','rangerover')
+cars[1]
+cars[-1]
+cars[cars < 'rangerover']
+cars[c(2,3)]
+cars[1:3]
+b <- cars < 'mercedes'
+b
+cars[b]
+cars[3]
+cars[10]
+
+```
+
+```{r matrix and data frames}
+vehicle <- matrix(2000:2005, nrow = 2, ncol = 3)
+vehicle
+nrow(vehicle)
+ncol(vehicle)
+vehicles <- data.frame(num = 1:4, cars = c('audi','mercedes','BMW-X4','rangerover'), year_purchased =c('2000','2001','2002','2003'), owner = c('chandragiri','nick','nikhil','chand'))
+students <- data.frame(num = 1:5, cars = c('amy','bharat','cherry','dory','elf'), course =c('CSE','MEC','BIO','MATHS','ETL'), ID = c('a1','b1','c1','d1','e1'), grades =c('A','C','B','A','B'))
+CSE <- data.frame(num = 1:3,  CSE= c('CS500','CS501','CS502'))
+ETL <- data.frame(num = 1:3,  ETL= c('CS400','CS401','CS402'))
+vehicles
+students
+CSE
+ETL
+```
+
+```{r missing values}
+students <- c('amy','bharat','cherry','dory','elf',NA)
+students
+is.na(students)
+is.nan(students)
+na.omit(students)
+costs_in_dollars <- c(100,230,222,11,NA,NA)
+costs_in_dollars
+mean(is.na(costs_in_dollars))
+is.nan(costs_in_dollars)
+is.na(costs_in_dollars)
+na.omit(costs_in_dollars)
+
+
+
+```
+
+* Name: Nikhil Chandragiri
+* Wiu Id: 917-33-4566
+* Email: n-chandragiri@wiu.edu
