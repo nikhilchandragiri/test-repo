@@ -1,0 +1,60 @@
+---
+title: "ass_3"
+author: "Nikhil Chandragiri"
+date: "2/1/2019"
+output: html_document
+---
+
+```{R reading csv file}
+sample <-read.csv("sample.csv",TRUE,",")
+#sample
+```
+
+```{R vectors}
+vector1 <- sample[,5]
+vector1
+vector2 <-sample[,7]
+vector2
+lenOfOne <- length(vector1)
+lenOfOne
+```
+
+```{R forloop and seq}
+#using for and seq_along
+mean<-0
+for(l in seq_along(vector1)){
+  mean=mean+vector1[l]
+}
+result=mean/lenOfOne
+result
+```
+
+```{R using function}
+#creating function
+getMean<-function(sam){
+  sumNums<-0
+for(l in seq_along(sam)){
+  sumNums=sumNums+sam[l]
+}
+resultMean=sumNums/length(sam)
+return (resultMean)
+}
+result1 <-getMean(vector1)
+result1
+```
+
+```{R lapply function}
+
+l<- data.frame(vector2)
+k<-lapply(l,getMean)
+k
+```
+
+
+  
+
+
+```
+
+
+
