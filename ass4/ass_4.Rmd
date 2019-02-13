@@ -1,0 +1,26 @@
+---
+title: "assignment_4"
+author: "Nikhil Chandragiri"
+date: "2/12/2019"
+output: html_document
+---
+
+```{r SCRAPING}
+
+library(rvest)
+library(purrr)
+
+url <- ("http://ds.iris.edu/seismon/eventlist/index.phtml")
+
+map_df(1:4, function(i){
+
+webpage <- read_html(sprintf(url,i))
+
+region = html_text(html_nodes(webpage,".region"))
+number = html_text(html_nodes(webpage,".evid"))
+
+data.frame(region, number )
+ 
+})
+```
+
