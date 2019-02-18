@@ -1,0 +1,28 @@
+---
+title: "hw5"
+author: "Nikhil Chandragiri"
+date: "2/17/2019"
+output: html_document
+---
+
+```{r}
+library(rvest)
+url <- ("https://en.wikipedia.org/wiki/List_of_fatal_accidents_in_cricket")
+webpage <- read_html(url)
+result <- webpage 
+result2 <- html_nodes(webpage,"table") 
+result3 <- html_table(result2,fill=TRUE)
+my_data <- data.frame(result3)
+Date_used = as.Date(my_data$Date,format="%d %B %Y")
+Current_date = Sys.Date()
+my_data$years <- floor((as.numeric(Current_date-Date_used)/365))
+#output
+my_data
+
+
+
+  
+
+
+```
+
