@@ -1,0 +1,35 @@
+---
+title: "assignment_7"
+author: "Nikhil Chandragiri"
+date: "3/12/2019"
+output: html_document
+---
+
+
+
+```{r}
+library(rvest)
+library(XML)
+library(ggplot2)
+
+url <- read_html("http://ds.iris.edu/seismon/eventlist/index.phtml")
+url <- url%>%
+   html_nodes("table")%>%
+   
+   html_table(fill=TRUE)
+
+ my_data1<-data.frame(url)
+ #naming columns
+  names(my_data1)<-c("DAte","LAT","LON","MAG","DEPTH","LOCATION","ID")
+  my_data2<-my_data1[1:20,2:7]
+  #dataFrame to be used 
+  my_data2
+  
+  #ggplot
+  str(my_data2)
+ggplot(my_data2,aes(x=MAG,y=DEPTH))+geom_point()+geom_smooth(method=lm)
+ 
+```
+
+
+
