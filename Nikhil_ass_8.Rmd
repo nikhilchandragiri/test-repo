@@ -1,0 +1,43 @@
+---
+title: "assignment_8"
+author: "Nikhil Chandragiri"
+date: "3/23/2019"
+output: html_document
+---
+
+
+
+```{r}
+library(rvest)
+library(XML)
+library(ggplot2)
+
+url <- read_html("http://ds.iris.edu/seismon/eventlist/index.phtml")
+url <- url%>%
+   html_nodes("table")%>%
+   
+   html_table(fill=TRUE)
+
+ my_data1<-data.frame(url)
+ #naming columns
+  names(my_data1)<-c("DAte","LAT","LON","MAG","DEPTH","LOCATION","ID")
+  my_data2<-my_data1[1:20,2:7]
+  #dataFrame to be used 
+  my_data2
+  
+  #ggplot
+  str(my_data2)
+  
+#plot(my_data2$MAG,my_data2$Depth)
+par(mar=rep(0.2,4))
+dataCluster<-kmeans(my_data2[,c(3,4)],centers = 2)
+names(dataCluster)
+my_data2$cluster<-as.factor(dataCluster$cluster)
+
+plot(my_data2$MAG,my_data2$DEPTH,col=my_data2$cluster,pch=19,cex=2)
+points(dataCluster$centers,col=1:2,pch=3,cex=3,lwd=3)
+ 
+```
+
+
+
